@@ -1,15 +1,14 @@
 {
   "name": "enam-simulation",
   "version": "1.0.0",
-  "description": "e-NAM (National Agriculture Market) simulation with real-time bidding functionality",
-  "main": "server/server.js",
+  "description": "e-NAM (National Agriculture Market) simulation with Spring Boot backend and React frontend featuring real-time bidding",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "install-deps": "npm install && cd server && npm install && cd ../client && npm install",
-    "start": "cd server && npm start"
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && ./mvnw spring-boot:run",
+    "frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "test": "cd backend && ./mvnw test && cd ../frontend && npm test"
   },
   "keywords": [
     "enam",
@@ -17,7 +16,10 @@
     "marketplace",
     "real-time-bidding",
     "farmers",
-    "trading"
+    "trading",
+    "springboot",
+    "react",
+    "websocket"
   ],
   "author": "e-NAM Simulation Team",
   "license": "MIT",
